@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allowed_commands": [
+      "git",
+      "ls",
+      "cat",
+      "grep",
+      "find",
+      "sed",
+      "awk",
+      "touch",
+      "mkdir",
+      "mv",
+      "cp",
+      "rm",
+      "npm",
+      "pip",
+      "python",
+      "node",
+      "pnpm",
+      "yarn",
+      "bun",
+      "make",
+      "cmake",
+      "docker",
+      "terraform",
+      "kubectl",
+      "gcloud",
+      "aws",
+      "az",
+      "gh",
+      "claude",
+      "gemini",
+      "cursor",
+      "windsurf"
+    ]
+  }
+}

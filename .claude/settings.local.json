@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git*)",
+      "Bash(ls*)",
+      "Bash(cat*)",
+      "Bash(grep*)",
+      "Bash(find*)",
+      "Bash(sed*)",
+      "Bash(awk*)",
+      "Bash(touch*)",
+      "Bash(mkdir*)",
+      "Bash(mv*)",
+      "Bash(cp*)",
+      "Bash(rm*)",
+      "Bash(npm*)",
+      "Bash(pip*)",
+      "Bash(python*)",
+      "Bash(node*)",
+      "Bash(pnpm*)",
+      "Bash(yarn*)",
+      "Bash(bun*)",
+      "Bash(make*)",
+      "Bash(cmake*)",
+      "Bash(docker*)",
+      "Bash(terraform*)",
+      "Bash(kubectl*)",
+      "Bash(gcloud*)",
+      "Bash(aws*)",
+      "Bash(az*)",
+      "Bash(gh*)",
+      "Bash(claude*)",
+      "Bash(gemini*)",
+      "Bash(cursor*)",
+      "Bash(windsurf*)"
+    ],
+    "deny": []
+  }
+}

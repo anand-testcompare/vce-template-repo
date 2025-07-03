@@ -1,0 +1,6 @@
+{
+  "llm.prompt_style": "simple",
+  "llm.framework_preference": "popular",
+  "llm.docs_preference": "latest",
+  "project.ide_agnostic": true
+}
