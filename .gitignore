@@ -38,6 +38,7 @@ yarn-error.log*
 # Claude
 .claude/*
 !.claude/settings.local.json
+!.claude/settings.json
 
 # Codex
 .codex/*

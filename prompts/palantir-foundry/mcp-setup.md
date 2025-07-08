@@ -1,9 +1,11 @@
-# Vibe Coded Excellence (VCE) - Self-Configuration Prompts
+# Palantir MCP Self-Configuration Prompts
 
-## claude-code-mcp-setup.md
+These prompts help configure Palantir MCP for various AI development tools. Each prompt is designed to be self-sufficient - just copy, paste, and the AI will guide you through the setup process.
+
+## For Claude Code
 
 ```markdown
-# Claude Code MCP Self-Configuration Prompt
+# Palantir MCP Setup for Claude Code
 
 You are helping me configure Palantir MCP for Claude Code. I have already completed these prerequisites:
 - Environment variable FOUNDRY_TOKEN is set
@@ -34,10 +36,10 @@ After generating the command:
 Replace the placeholders with my actual values and execute the installation.
 ```
 
-## gemini-cli-mcp-setup.md
+## For Gemini CLI
 
 ```markdown
-# Gemini CLI MCP Self-Configuration Prompt
+# Palantir MCP Setup for Gemini CLI
 
 You are helping me configure Palantir MCP for Gemini CLI. I have already completed these prerequisites:
 - Environment variable FOUNDRY_TOKEN is set  
@@ -89,10 +91,60 @@ Please:
 Replace the placeholders with my actual values and provide the complete configuration.
 ```
 
-## foundry-integration-patterns.md
+## For Cursor IDE
 
 ```markdown
-# Foundry Integration Patterns
+# Palantir MCP Setup for Cursor
+
+You are helping me configure Palantir MCP for Cursor IDE. I have already completed these prerequisites:
+- Environment variable FOUNDRY_TOKEN is set
+- NPM authentication is configured
+- Control Panel permissions are enabled
+
+Please help me update my Cursor settings file with the correct configuration.
+
+**My Configuration:**
+- Enrollment URL: [USER_FILLS_IN]
+- Compass Folder RID: [USER_FILLS_IN]
+
+**Settings File Location:** `~/.cursor/settings.json`
+
+**Required MCP Configuration Pattern:**
+```json
+{
+  "mcpServers": {
+    "palantir": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@palantir/mcp@latest",
+        "--foundry-api-url",
+        "https://[ENROLLMENT].palantirfoundry.com",
+        "--default-foundry-folder",
+        "[COMPASS_RID]"
+      ],
+      "env": {
+        "NPM_CONFIG_REGISTRY": "https://[ENROLLMENT].palantirfoundry.com/artifacts/api/repositories/ri.artifacts.repository.discovered.foundry-mcp/contents/release/npm/",
+        "FOUNDRY_TOKEN": "${FOUNDRY_TOKEN}"
+      }
+    }
+  }
+}
+```
+
+Please:
+1. Check if settings file exists and read current configuration
+2. Merge this MCP configuration with existing settings
+3. Write the updated settings.json file
+4. Remind me to restart Cursor IDE
+
+Replace the placeholders with my actual values and provide the complete configuration.
+```
+
+## Integration Best Practices
+
+```markdown
+# Foundry Integration Best Practices
 
 You are an expert in Palantir Foundry workflows and MCP integration. Help me establish best practices for using AI tools with Foundry data.
 
@@ -126,10 +178,10 @@ You are an expert in Palantir Foundry workflows and MCP integration. Help me est
 Please provide specific examples and templates for my use cases, focusing on practical implementation rather than theoretical concepts.
 ```
 
-## mcp-troubleshooting.md
+## Troubleshooting Guide
 
 ```markdown
-# MCP Troubleshooting Assistant
+# Palantir MCP Troubleshooting
 
 You are helping me debug Palantir MCP connection issues. I'm experiencing problems with my MCP setup.
 
