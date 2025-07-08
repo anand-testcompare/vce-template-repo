@@ -1,145 +1,53 @@
 # Palantir MCP Self-Configuration Prompts
 
-These prompts help configure Palantir MCP for various AI development tools. Each prompt is designed to be self-sufficient - just copy, paste, and the AI will guide you through the setup process.
+These prompts help configure Palantir MCP for various AI development tools. Each prompt is designed to be self-sufficient - just copy the entire contents of the appropriate file and paste it into your AI tool.
 
-## For Claude Code
+## Available Setup Guides
 
-```markdown
-# Palantir MCP Setup for Claude Code
+### 🤖 Claude Code
+- **File**: [`claude-code-mcp-setup.md`](./claude-code-mcp-setup.md)
+- **Usage**: Copy the entire file contents and paste into Claude Code
+- **Method**: Uses `claude mcp add` command
 
-You are helping me configure Palantir MCP for Claude Code. I have already completed these prerequisites:
-- Environment variable FOUNDRY_TOKEN is set
-- NPM authentication is configured
-- Control Panel permissions are enabled
+### 💎 Gemini CLI
+- **File**: [`gemini-cli-mcp-setup.md`](./gemini-cli-mcp-setup.md)
+- **Usage**: Copy the entire file contents and paste into Gemini CLI
+- **Method**: Updates `~/.gemini/settings.json`
 
-Please help me run the correct `claude mcp add` command using these parameters:
+### 📝 Cursor IDE
+- **File**: [`cursor-ide-mcp-setup.md`](./cursor-ide-mcp-setup.md)
+- **Usage**: Copy the entire file contents and paste into Cursor's AI chat
+- **Method**: Updates `~/.cursor/settings.json`
 
-**My Configuration:**
-- Enrollment URL: [USER_FILLS_IN]
-- Compass Folder RID: [USER_FILLS_IN]
+## Prerequisites (Required for All Tools)
 
-**Expected Command Pattern:**
-```bash
-claude mcp add palantir-mcp \
-  -e FOUNDRY_TOKEN="${FOUNDRY_TOKEN}" \
-  -e NPM_CONFIG_REGISTRY="https://[ENROLLMENT].palantirfoundry.com/artifacts/api/repositories/ri.artifacts.repository.discovered.foundry-mcp/contents/release/npm/" \
-  -- npx "-y" "@palantir/mcp@latest" \
-  "--foundry-api-url" "https://[ENROLLMENT].palantirfoundry.com" \
-  "--default-foundry-folder" "[COMPASS_RID]"
-```
+Before using any of these setup prompts, ensure you have:
 
-After generating the command:
-1. Execute it for me
-2. Run `claude mcp list` to verify installation
-3. Suggest next steps for testing the integration
+1. **FOUNDRY_TOKEN Environment Variable**
+   ```bash
+   export FOUNDRY_TOKEN="your-token-here"
+   ```
+   Add this to your shell profile (`~/.bashrc`, `~/.zshrc`, etc.)
 
-Replace the placeholders with my actual values and execute the installation.
-```
+2. **NPM Authentication**
+   Configure NPM to authenticate with your Palantir instance
 
-## For Gemini CLI
+3. **Control Panel Permissions**
+   Enable appropriate permissions in your Foundry Control Panel
 
-```markdown
-# Palantir MCP Setup for Gemini CLI
+## Information You'll Need
 
-You are helping me configure Palantir MCP for Gemini CLI. I have already completed these prerequisites:
-- Environment variable FOUNDRY_TOKEN is set  
-- NPM authentication is configured
-- Control Panel permissions are enabled
+Each setup prompt will ask for:
+- **Enrollment URL**: Your Foundry instance (e.g., `compass-prod-us-east-1`)
+- **Compass Folder RID**: Your default working folder (e.g., `ri.compass.main-realm.folder.12345678-abcd-1234-5678-abcdef123456`)
 
-Please help me update my Gemini CLI settings file with the correct configuration.
+## Quick Start
 
-**My Configuration:**
-- Enrollment URL: [USER_FILLS_IN]
-- Compass Folder RID: [USER_FILLS_IN]
-
-**Settings File Location:** `~/.gemini/settings.json`
-
-**Current Settings (if any):**
-```json
-[USER_PASTES_CURRENT_SETTINGS]
-```
-
-**Required MCP Configuration Pattern:**
-```json
-{
-  "mcpServers": {
-    "palantir": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@palantir/mcp@latest",
-        "--foundry-api-url",
-        "https://[ENROLLMENT].palantirfoundry.com",
-        "--default-foundry-folder",
-        "[COMPASS_RID]"
-      ],
-      "env": {
-        "NPM_CONFIG_REGISTRY": "https://[ENROLLMENT].palantirfoundry.com/artifacts/api/repositories/ri.artifacts.repository.discovered.foundry-mcp/contents/release/npm/",
-        "FOUNDRY_TOKEN": "${FOUNDRY_TOKEN}"
-      }
-    }
-  }
-}
-```
-
-Please:
-1. Merge this MCP configuration with my existing settings
-2. Provide the complete updated settings.json file
-3. Remind me to restart Gemini CLI with `/quit` then `gemini`
-4. Show me how to verify with `/mcp` command
-
-Replace the placeholders with my actual values and provide the complete configuration.
-```
-
-## For Cursor IDE
-
-```markdown
-# Palantir MCP Setup for Cursor
-
-You are helping me configure Palantir MCP for Cursor IDE. I have already completed these prerequisites:
-- Environment variable FOUNDRY_TOKEN is set
-- NPM authentication is configured
-- Control Panel permissions are enabled
-
-Please help me update my Cursor settings file with the correct configuration.
-
-**My Configuration:**
-- Enrollment URL: [USER_FILLS_IN]
-- Compass Folder RID: [USER_FILLS_IN]
-
-**Settings File Location:** `~/.cursor/settings.json`
-
-**Required MCP Configuration Pattern:**
-```json
-{
-  "mcpServers": {
-    "palantir": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@palantir/mcp@latest",
-        "--foundry-api-url",
-        "https://[ENROLLMENT].palantirfoundry.com",
-        "--default-foundry-folder",
-        "[COMPASS_RID]"
-      ],
-      "env": {
-        "NPM_CONFIG_REGISTRY": "https://[ENROLLMENT].palantirfoundry.com/artifacts/api/repositories/ri.artifacts.repository.discovered.foundry-mcp/contents/release/npm/",
-        "FOUNDRY_TOKEN": "${FOUNDRY_TOKEN}"
-      }
-    }
-  }
-}
-```
-
-Please:
-1. Check if settings file exists and read current configuration
-2. Merge this MCP configuration with existing settings
-3. Write the updated settings.json file
-4. Remind me to restart Cursor IDE
-
-Replace the placeholders with my actual values and provide the complete configuration.
-```
+1. Choose your AI tool from the list above
+2. Open the corresponding setup file
+3. Copy the **entire contents** of the file
+4. Paste into your AI tool
+5. Follow the prompts to complete setup
 
 ## Integration Best Practices
 
